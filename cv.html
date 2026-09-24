@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kálmán Gábor — Marketing & PPC portfólió</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#181423; --paper:#FBFAFF; --card:#FFFFFF; --line:#E7E2F5; --muted:#655F78;
+  --purple:#7B5CFA; --teal:#00C2A8; --coral:#FF6B57; --yellow:#FFC53D; --pink:#FF4FA3;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --ink:#F2EFFB; --paper:#100D19; --card:#1B1729; --line:#332B4D; --muted:#B4ADD0; }
+}
+:root[data-theme="dark"]{ --ink:#F2EFFB; --paper:#100D19; --card:#1B1729; --line:#332B4D; --muted:#B4ADD0; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:78px;}
+body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.55;position:relative;overflow-x:hidden;}
+img{max-width:100%;}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+h1,h2,h3{font-family:'Fraunces',serif;letter-spacing:-0.01em;}
+a{color:var(--purple);}
+
+/* AURORA BACKGROUND */
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;}
+.b1{width:520px;height:520px;background:var(--purple);top:-140px;left:-120px;animation:float1 22s ease-in-out infinite;}
+.b2{width:460px;height:460px;background:var(--teal);top:20%;right:-160px;animation:float2 26s ease-in-out infinite;}
+.b3{width:420px;height:420px;background:var(--coral);bottom:-160px;left:15%;animation:float3 24s ease-in-out infinite;}
+.b4{width:340px;height:340px;background:var(--pink);top:55%;left:45%;animation:float1 30s ease-in-out infinite reverse;opacity:.35;}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(60px,80px) scale(1.15);}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-70px,60px) scale(0.9);}}
+@keyframes float3{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(50px,-70px) scale(1.1);}}
+@media (prefers-color-scheme: dark){.blob{opacity:.28;}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--paper) 78%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);}
+.navrow{max-width:940px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.navname{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;background:linear-gradient(90deg,var(--purple),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.navlinks{display:flex;gap:22px;overflow-x:auto;font-size:.92rem;}
+.navlinks a{color:var(--ink);text-decoration:none;position:relative;padding:2px 0;white-space:nowrap;}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--purple),var(--teal));transition:width .25s;}
+.navlinks a:hover::after,.navlinks a:focus-visible::after{width:100%;}
+
+/* HERO */
+.hero{padding:76px 0 46px;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--purple);font-weight:500;opacity:0;animation:rise .6s ease forwards .05s;}
+.hero h1{font-size:clamp(2.6rem,7vw,4.2rem);line-height:1.02;margin:12px 0 8px;font-weight:900;
+  background:linear-gradient(100deg,var(--purple) 10%,var(--pink) 45%,var(--coral) 75%,var(--yellow) 100%);
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:0;animation:rise .7s ease forwards .15s, sheen 7s linear infinite 1s;}
+@keyframes sheen{to{background-position:200% center;}}
+.hero .role{font-size:1.18rem;color:var(--muted);max-width:46ch;opacity:0;animation:rise .7s ease forwards .3s;}
+.hero .loc{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--muted);opacity:0;animation:rise .7s ease forwards .4s;}
+@keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.cta-row{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:rise .7s ease forwards .5s;}
+.btn{font-family:'IBM Plex Sans',sans-serif;font-size:.9rem;font-weight:600;padding:11px 20px;border-radius:30px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s,color .2s;display:inline-block;}
+.btn.primary{background:linear-gradient(100deg,var(--purple),var(--coral));border-color:transparent;color:#fff;box-shadow:0 6px 20px -6px color-mix(in srgb, var(--purple) 60%, transparent);}
+.btn:hover{transform:translateY(-3px);}
+.btn.primary:hover{box-shadow:0 10px 26px -6px color-mix(in srgb, var(--coral) 70%, transparent);}
+
+/* SECTIONS */
+section{padding:58px 0;}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;}
+.sec-head h2{font-size:1.8rem;font-weight:700;}
+.sec-head .num{font-family:'IBM Plex Mono',monospace;color:#fff;font-size:.78rem;background:linear-gradient(120deg,var(--purple),var(--teal));padding:4px 9px;border-radius:20px;}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
+.metric{background:var(--card);border:1px solid var(--line);padding:22px;border-radius:16px;box-shadow:0 10px 30px -18px rgba(80,50,150,.35);position:relative;overflow:hidden;transition:transform .25s;}
+.metric:hover{transform:translateY(-4px);}
+.metric::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--grad,linear-gradient(90deg,var(--purple),var(--teal)));}
+.metric .num{font-family:'IBM Plex Mono',monospace;font-size:2.1rem;font-weight:600;color:var(--accent,var(--purple));}
+.metric .lbl{margin-top:6px;font-size:.88rem;color:var(--muted);}
+
+/* EXPERIENCE */
+.job{border-top:1px solid var(--line);}
+.job:last-child{border-bottom:1px solid var(--line);}
+.job-btn{width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;text-align:left;padding:19px 4px;cursor:pointer;color:var(--ink);font-family:inherit;border-radius:10px;transition:background .2s;}
+.job-btn:hover{background:color-mix(in srgb, var(--purple) 6%, transparent);}
+.job-idx{font-family:'IBM Plex Mono',monospace;color:#fff;background:var(--teal);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.78rem;flex-shrink:0;}
+.job-title{flex:1;}
+.job-title .co{font-family:'Fraunces',serif;font-weight:700;font-size:1.12rem;}
+.job-title .role{color:var(--muted);font-size:.92rem;}
+.job-when{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--muted);white-space:nowrap;}
+.chev{transition:transform .3s;flex-shrink:0;color:var(--purple);}
+.job-btn[aria-expanded="true"] .chev{transform:rotate(180deg);}
+.job-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.job-panel ul{padding:2px 0 20px 44px;color:var(--muted);font-size:.95rem;}
+.job-panel li{margin-bottom:6px;}
+
+/* SKILLS */
+.skill-group{margin-bottom:22px;}
+.skill-group h3{font-size:.95rem;font-family:'IBM Plex Mono',monospace;color:var(--purple);font-weight:600;margin-bottom:10px;}
+.tags{display:flex;flex-wrap:wrap;gap:9px;}
+.tag{border:1px solid var(--line);padding:7px 14px;border-radius:20px;font-size:.85rem;background:var(--card);transition:transform .2s,border-color .2s;}
+.tag:hover{transform:translateY(-2px);border-color:var(--teal);}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;cursor:pointer;transition:transform .25s,box-shadow .25s;text-align:left;box-shadow:0 10px 26px -20px rgba(80,50,150,.4);}
+.gcard:hover,.gcard:focus-visible{transform:translateY(-5px) scale(1.02);box-shadow:0 16px 34px -16px color-mix(in srgb, var(--purple) 45%, transparent);}
+.gcard svg{width:100%;height:110px;}
+.gcard .gtitle{margin-top:10px;font-weight:600;font-size:.92rem;}
+.gcard .gsub{color:var(--muted);font-size:.8rem;font-family:'IBM Plex Mono',monospace;}
+
+.bar{transform:scaleY(0);transform-origin:bottom;transition:transform 1s cubic-bezier(.2,.8,.2,1);}
+.gcard.inview .bar,.lightbox.open .bar{transform:scaleY(1);}
+.line{stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset 1.3s ease;}
+.gcard.inview .line,.lightbox.open .line{stroke-dashoffset:0;}
+.ring{stroke-dasharray:240;stroke-dashoffset:240;transition:stroke-dashoffset 1.3s ease;}
+.gcard.inview .ring,.lightbox.open .ring{stroke-dashoffset:var(--ring-to,60);}
+
+.lightbox{position:fixed;inset:0;background:rgba(15,10,25,.72);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;}
+.lightbox.open{display:flex;}
+.lb-inner{background:var(--card);border-radius:20px;max-width:540px;width:100%;padding:34px;position:relative;box-shadow:0 30px 70px -20px rgba(0,0,0,.5);animation:pop .3s ease;}
+@keyframes pop{from{transform:scale(.92);opacity:0;}to{transform:scale(1);opacity:1;}}
+.lb-inner svg{width:100%;height:230px;}
+.lb-close{position:absolute;top:14px;right:16px;background:var(--line);border:none;width:32px;height:32px;border-radius:50%;font-size:1.2rem;cursor:pointer;color:var(--ink);}
+.lb-title{font-family:'Fraunces',serif;font-size:1.35rem;margin-top:14px;font-weight:700;}
+.lb-desc{color:var(--muted);margin-top:6px;font-size:.94rem;}
+
+/* EDU */
+.edu-item{display:flex;justify-content:space-between;gap:20px;padding:18px 4px;border-top:1px solid var(--line);flex-wrap:wrap;transition:background .2s;border-radius:10px;}
+.edu-item:hover{background:color-mix(in srgb, var(--teal) 6%, transparent);}
+.edu-item:last-child{border-bottom:1px solid var(--line);}
+.edu-item .school{font-family:'Fraunces',serif;font-weight:700;}
+.edu-item .field{color:var(--muted);font-size:.92rem;}
+.edu-item .when{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--muted);white-space:nowrap;}
+
+footer{padding:40px 0 60px;text-align:left;}
+footer .fname{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;}
+footer .flinks{margin-top:10px;display:flex;flex-wrap:wrap;gap:18px;font-size:.9rem;}
+footer .flinks a{text-decoration:none;font-weight:500;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;}
+  .bar{transform:scaleY(1);} .line{stroke-dashoffset:0;} .ring{stroke-dashoffset:var(--ring-to,60);}
+  .eyebrow,.hero h1,.hero .role,.hero .loc,.cta-row{opacity:1;}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+
+<nav>
+  <div class="navrow">
+    <div class="navname">Kálmán Gábor</div>
+    <div class="navlinks">
+      <a href="#metrics">Eredmények</a>
+      <a href="#experience">Tapasztalat</a>
+      <a href="#skills">Kompetenciák</a>
+      <a href="#gallery">Kampányok</a>
+      <a href="#education">Tanulmányok</a>
+      <a href="#contact">Kapcsolat</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Marketing manager · PPC specialist · Stratégiai tanácsadó</div>
+    <h1>Kálmán Gábor</h1>
+    <p class="role">Teljesítményalapú online marketing hat éve — Google Ads, Meta Ads és adatvezérelt kampányépítés kis- és középvállalati márkáknak.</p>
+    <div class="loc">Budapest, Magyarország</div>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:kaga@hotmail.hu">Email írása</a>
+      <a class="btn" href="tel:+36306432950">+36 30 643 2950</a>
+      <a class="btn" href="https://www.linkedin.com/in/k%C3%A1lm%C3%A1ng%C3%A1bor" target="_blank" rel="noopener">LinkedIn profil</a>
+    </div>
+  </section>
+
+  <section id="metrics">
+    <div class="sec-head"><span class="num">01</span><h2>Eredmények számokban</h2></div>
+    <div class="metrics">
+      <div class="metric" style="--accent:var(--purple)"><div class="num" data-count="6" data-suffix="M Ft">0</div><div class="lbl">havi kezelt Google Ads büdzsé</div></div>
+      <div class="metric" style="--accent:var(--teal);--grad:linear-gradient(90deg,var(--teal),var(--pink))"><div class="num" data-count="40" data-prefix="20–" data-suffix="%">0%</div><div class="lbl">költségcsökkentés a ROAS megtartása mellett</div></div>
+      <div class="metric" style="--accent:var(--coral);--grad:linear-gradient(90deg,var(--coral),var(--yellow))"><div class="num" data-count="30" data-prefix="15–" data-suffix="%">0%</div><div class="lbl">CTR-növekedés kampányoptimalizálással</div></div>
+      <div class="metric" style="--accent:var(--pink);--grad:linear-gradient(90deg,var(--pink),var(--purple))"><div class="num" data-count="6" data-suffix="+ év">0</div><div class="lbl">performance marketing tapasztalat</div></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><span class="num">02</span><h2>Szakmai tapasztalat</h2></div>
+    <div id="jobs"></div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="num">03</span><h2>Kompetenciák &amp; eszközök</h2></div>
+    <div class="skill-group"><h3>Fő kompetenciák</h3><div class="tags">
+      <span class="tag">Facebook for Business</span><span class="tag">Meta Business Suite</span><span class="tag">Stratégiai tervezés</span>
+    </div></div>
+    <div class="skill-group"><h3>Platformok</h3><div class="tags">
+      <span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">GA4</span><span class="tag">Google Tag Manager</span><span class="tag">Looker Studio</span><span class="tag">Mailchimp</span><span class="tag">MailerLite</span><span class="tag">WordPress</span><span class="tag">Unas / Shoprenter</span>
+    </div></div>
+    <div class="skill-group"><h3>Kreatív eszközök</h3><div class="tags">
+      <span class="tag">Adobe Photoshop</span><span class="tag">Premiere Pro</span><span class="tag">InDesign</span><span class="tag">Canva Pro</span><span class="tag">CapCut</span>
+    </div></div>
+    <div class="skill-group"><h3>Nyelvek &amp; minősítések</h3><div class="tags">
+      <span class="tag">Magyar — anyanyelvi</span><span class="tag">Angol — tárgyalóképes</span><span class="tag">MNB pénzügyi közvetítői vizsga</span><span class="tag">Google Ads Masterclass</span>
+    </div></div>
+  </section>
+
+  <section id="gallery">
+    <div class="sec-head"><span class="num">04</span><h2>Kampányeredmények</h2></div>
+    <p style="color:var(--muted);font-size:.92rem;margin-bottom:20px;max-width:60ch;">Kattints egy kártyára a részletekért. (Ide később valódi kampány-screenshotok is kerülhetnek.)</p>
+    <div class="gallery" id="gallery-grid"></div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="num">05</span><h2>Tanulmányok</h2></div>
+    <div class="edu-item">
+      <div><div class="school">Budapesti Metropolitan Egyetem</div><div class="field">Kommunikáció- és médiatudomány, PR és marketing</div></div>
+      <div class="when">2017–2020</div>
+    </div>
+    <div class="edu-item">
+      <div><div class="school">Budapesti Metropolitan Egyetem</div><div class="field">Televízióműsor-készítő, Tömegkommunikáció</div></div>
+      <div class="when">2014–2017</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fname">Kálmán Gábor</div>
+    <div class="flinks" id="contact">
+      <a href="mailto:kaga@hotmail.hu">kaga@hotmail.hu</a>
+      <a href="tel:+36306432950">+36 30 643 2950</a>
+      <a href="https://www.linkedin.com/in/k%C3%A1lm%C3%A1ng%C3%A1bor" target="_blank" rel="noopener">LinkedIn</a>
+      <span style="color:var(--muted);">Budapest, Magyarország</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" id="lb-close" aria-label="Bezárás">×</button>
+    <div id="lb-svg"></div>
+    <div class="lb-title" id="lb-title"></div>
+    <div class="lb-desc" id="lb-desc"></div>
+  </div>
+</div>
+
+<script>
+/* Experience accordion */
+const jobs = [
+ {co:"Endo-Kapszula Magánorvosi Centrum", role:"PPC specialist &amp; online marketing specialist", when:"2025.06 – jelen", items:[
+   "Havi 6M Ft Google Ads (PMax, RSA) büdzsé kezelése, 20–40% költségcsökkentéssel a ROAS megtartása mellett",
+   "Keresési szándék alapú márka- és demand generation kampányok tervezése, CTR +15–30%",
+   "GA4 riportok, Looker Studio dashboardok, Meta Ads kampányok felügyelete",
+   "AEO/GEO és AI-barát SEO struktúrák, CRO-fókuszú UX/copy fejlesztés"]},
+ {co:"Közép-Európai Állatorvosi Központ Kft.", role:"Head of Marketing", when:"2024.06 – 2025.06", items:[
+   "A Vet-Concept márka online-offline marketingjének vezetése HU és SK piacon",
+   "Marketing stratégia, éves büdzsé és csapat (grafikus, fejlesztő) irányítása",
+   "Google és Facebook Ads kampányok felállítása és optimalizálása",
+   "Automatizált hírlevél-kampányok és nyomtatott anyagok felügyelete"]},
+ {co:"Sport8 Hungary Kft.", role:"Marketing Manager", when:"2023.03 – 2024.06", items:[
+   "Napi marketingkommunikáció és riportolás tulajdonos és értékesítési igazgató felé",
+   "Ügynökségi PPC menedzserek brífelése, Google Ads / Meta riportok felügyelete",
+   "Piactér-integrációk (eMAG, Árukereső, Fizz, Decathlon) szezonális kampányai",
+   "Webshopok (Unas, Shoprenter, WordPress, Joomla) teljes körű felügyelete"]},
+ {co:"Magyar Wellness és Szauna Klub Kft.", role:"Communications &amp; Marketing Manager", when:"2020.10 – 2023.02", items:[
+   "Webshop építés és üzemeltetés, Facebook hirdetési kampányok optimalizálása",
+   "Mailchimp hírlevél-kampányok, közösségimédia-stratégia (Instagram, Facebook)",
+   "Napi kapcsolattartás észt, finn, orosz és kínai beszállítókkal",
+   "A Saunum Group AS hazai marketingkommunikációjának felügyelete"]},
+ {co:"Gamma Digital", role:"Marketing &amp; Sales Associate", when:"2019.04 – 2020.02", items:[
+   "Facebook remarketing kampányok futtatása, grafikai tervezés (InDesign, PS)",
+   "WordPress weboldal tervezése, fejlesztése és karbantartása",
+   "Google Analytics alapú forgalommérés és riportolás"]},
+ {co:"Follow Marketing", role:"Copywriter (megbízásos)", when:"2019.01 – 2020.01", items:[
+   "Közösségimédia-szövegírás partnerek (Family Frost, Tsuru Sushi Bar, Yolo Food) számára"]},
+ {co:"Hegyvidék Média Kft. (Hegyvidék Televízió)", role:"Operatőr és vágó", when:"2015.02 – 2016.09", items:[
+   "Napi hír- és magazinműsorok forgatása Sony broadcast kamerákkal",
+   "Élő, több kamerás stúdiófelvételek vezetése, vágás Edius programmal"]}
+];
+const jobsEl = document.getElementById('jobs');
+jobs.forEach((j,i)=>{
+  const div = document.createElement('div'); div.className='job';
+  div.innerHTML = `
+    <button class="job-btn" aria-expanded="false">
+      <span class="job-idx">${String(i+1).padStart(2,'0')}</span>
+      <span class="job-title"><span class="co">${j.co}</span><br><span class="role">${j.role}</span></span>
+      <span class="job-when">${j.when}</span>
+      <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="job-panel"><ul>${j.items.map(it=>`<li>${it}</li>`).join('')}</ul></div>`;
+  jobsEl.appendChild(div);
+  const btn = div.querySelector('.job-btn'), panel = div.querySelector('.job-panel');
+  btn.addEventListener('click', ()=>{
+    const open = btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded', String(!open));
+    panel.style.maxHeight = open ? '0px' : panel.scrollHeight+'px';
+  });
+});
+
+/* Animated gallery charts */
+const results = [
+ {title:"Hirdetési költség", sub:"−20–40%", desc:"Google Ads PMax és RSA kampányok optimalizálásával a hirdetési költség jelentősen csökkent, miközben a ROAS és a minőségi mutatók stabilak maradtak.",
+  svg:`<svg viewBox="0 0 200 100"><rect class="bar" x="20" y="20" width="30" height="70" rx="4" fill="var(--purple)"/><rect class="bar" x="80" y="45" width="30" height="45" rx="4" fill="var(--pink)" style="transition-delay:.1s"/><rect class="bar" x="140" y="55" width="30" height="35" rx="4" fill="var(--yellow)" style="transition-delay:.2s"/></svg>`},
+ {title:"Átkattintási arány (CTR)", sub:"+15–30%", desc:"Kulcsszólisták, hirdetésszövegek és célzás folyamatos finomhangolásával a kampányok CTR értéke tartósan nőtt.",
+  svg:`<svg viewBox="0 0 200 100"><polyline class="line" points="10,80 60,65 110,45 160,20 190,15" fill="none" stroke="var(--teal)" stroke-width="4" stroke-linecap="round"/><circle cx="190" cy="15" r="5" fill="var(--coral)"/></svg>`},
+ {title:"Kezelt havi büdzsé", sub:"6M Ft", desc:"Havi 6 millió forintos Google Ads büdzsé teljes körű tervezése, elosztása és riportolása, végrehajtói összefoglalókkal.",
+  svg:`<svg viewBox="0 0 200 100"><circle cx="100" cy="50" r="38" fill="none" stroke="var(--line)" stroke-width="14"/><circle class="ring" style="--ring-to:60" cx="100" cy="50" r="38" fill="none" stroke="var(--purple)" stroke-width="14" stroke-linecap="round" transform="rotate(-90 100 50)"/></svg>`},
+ {title:"Csatornák lefedettsége", sub:"Google · Meta · TikTok", desc:"Google Ads, Meta Ads és TikTok kampányok összehangolt tervezése és felügyelete egységes marketingstratégia mentén.",
+  svg:`<svg viewBox="0 0 200 100"><rect class="bar" x="15" y="60" width="35" height="30" rx="4" fill="var(--yellow)"/><rect class="bar" x="82" y="35" width="35" height="55" rx="4" fill="var(--teal)" style="transition-delay:.1s"/><rect class="bar" x="150" y="50" width="35" height="40" rx="4" fill="var(--pink)" style="transition-delay:.2s"/></svg>`}
+];
+const grid = document.getElementById('gallery-grid');
+results.forEach((r,i)=>{
+  const b = document.createElement('button'); b.className='gcard'; b.type='button';
+  b.innerHTML = `${r.svg}<div class="gtitle">${r.title}</div><div class="gsub">${r.sub}</div>`;
+  b.addEventListener('click', ()=>openLB(i));
+  grid.appendChild(b);
+});
+function openLB(i){
+  const r = results[i];
+  document.getElementById('lb-svg').innerHTML = r.svg;
+  document.getElementById('lb-title').textContent = r.title + ' — ' + r.sub;
+  document.getElementById('lb-desc').textContent = r.desc;
+  document.getElementById('lightbox').classList.add('open');
+}
+document.getElementById('lb-close').addEventListener('click', ()=>document.getElementById('lightbox').classList.remove('open'));
+document.getElementById('lightbox').addEventListener('click', e=>{ if(e.target.id==='lightbox') e.currentTarget.classList.remove('open'); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.getElementById('lightbox').classList.remove('open'); });
+
+/* Scroll-triggered reveals: gallery charts + KPI count-up */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('inview'); });
+},{threshold:.35});
+document.querySelectorAll('.gcard').forEach(c=>io.observe(c));
+
+function animateCount(el){
+  const target = parseFloat(el.dataset.count);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const dur = 1200; const start = performance.now();
+  function step(now){
+    const p = Math.min(1,(now-start)/dur);
+    const eased = 1 - Math.pow(1-p,3);
+    el.textContent = prefix + Math.round(target*eased) + suffix;
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const ioNum = new IntersectionObserver((entries,obs)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ animateCount(en.target); obs.unobserve(en.target); } });
+},{threshold:.6});
+document.querySelectorAll('.metric .num').forEach(n=>ioNum.observe(n));
+</script>
+</body>
+</html>
